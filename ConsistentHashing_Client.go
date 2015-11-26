@@ -95,5 +95,12 @@ func main(){
 	}
 	contents,_ = ioutil.ReadAll(response.Body)
 	fmt.Println("The GET ALL KEYS for url:",url3,"is:",string(contents))
+	req, _ = http.NewRequest("GET",url2+"/keys/4",nil)
+	response, err= client.Do(req)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	contents,_ = ioutil.ReadAll(response.Body)
+	fmt.Println("The GET VALUE  for url:",url2," and key 4 is:",string(contents))
 
 }
